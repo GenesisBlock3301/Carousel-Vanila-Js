@@ -14,17 +14,17 @@ prevSlide.onclick=function () {
 function next(direction){
 
    if(direction=="next"){
-      index++;
-       if(index==totalSlides){
+      index+=2;
+       if(index >= totalSlides){
         index=0;
        }
    }
    else{
-           if(index==0){
+           if(index <= 0){
             index=totalSlides-1;
            }
            else{
-            index--;
+            index-=2;
            }
     }
 
@@ -32,6 +32,7 @@ function next(direction){
           slides[i].classList.remove("active");
   }
   slides[index].classList.add("active");
+  slides[index+1].classList.add("active");
 
 
 }
